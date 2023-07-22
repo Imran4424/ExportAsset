@@ -13,7 +13,7 @@ import SwiftUI
 struct Line {
     var points = [CGPoint]()
     var color: Color = .black
-    var lineWidth: Double = 5.0
+    var lineWidth: Double = 10.0
 }
 
 struct HomeView: View {
@@ -57,6 +57,16 @@ struct HomeView: View {
                 canvasView
                     .padding()
                 HStack {
+                    Button("UNDO") {
+                        if lines.count == 0 {
+                            return
+                        }
+                        
+                        self.lines.remove(at: lines.count - 1)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    
                     Button("CLEAR") {
                         self.lines = []
                     }

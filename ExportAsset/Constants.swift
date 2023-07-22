@@ -8,5 +8,5 @@
 import Foundation
 
 class Constants {
-    static let imageWidth: CGFloat = 256
+    static let imageWidth: CGFloat = 1024
 }
